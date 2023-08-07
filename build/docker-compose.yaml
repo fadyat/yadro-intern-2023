@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  api:
+    container_name: yadro-intern
+    image: yadro-intern
+    build:
+      context: ../.
+      dockerfile: ./build/Dockerfile
+    command: [ "./yadro-intern", "/app/input.txt" ]
+    volumes:
+      - ./input.txt:/app/input.txt:ro
